@@ -13,7 +13,7 @@ public class HTMLFormateur extends Formatter{
         public String format(LogRecord record) {
             StringBuffer buf = new StringBuffer(1000);
             buf.append("<tr>/n");
-// color any levels >= WARNING in red
+            // color any levels >= WARNING in red
             if(record.getLevel().intValue() >= Level.WARNING.intValue()) {
                 buf.append("\t<td style=\"color:red\">");
                 buf.append("<b>");
