@@ -5,7 +5,7 @@ public class LogProcessor extends spoon.processing.AbstractProcessor<spoon.refle
      *
      * @unknown public boolean isToBeProcessed(CtExecutable candidate) {
     System.out.println(candidate.getParent().toString());
-    if(candidate.getSignature().toString() == "Command")
+    if(candidate.getSignature().toString() == "utils.Command")
     return true;
     return false;
     }*

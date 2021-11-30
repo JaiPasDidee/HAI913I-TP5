@@ -1,17 +1,12 @@
-import java.io.IOException;
 import java.util.*;
 import java.util.logging.*;
 
 import spoon.Launcher;
 import spoon.LogProcessor;
-import spoon.processing.AbstractProcessor;
-import spoon.reflect.declaration.CtAnnotation;
-import spoon.reflect.declaration.CtClass;
-import spoon.reflect.declaration.CtMethod;
-import spoon.reflect.factory.Factory;
-
-import java.lang.annotation.Annotation;
-import java.util.List;
+import utils.Command;
+import utils.HTMLFormateur;
+import utils.Product;
+import utils.User;
 
 public class Main {
 
