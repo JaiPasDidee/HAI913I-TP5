@@ -23,19 +23,20 @@ public class Main {
         products.put(1,new Product(1, "p1", 20, new GregorianCalendar(2021, 11, 30)));
         products.put(2,new Product(2, "p2", 25, new GregorianCalendar(2021, 11, 29)));
         Command command = new Command(products);
+        User user = new User(1, "nicolas","nicolas@gmail.com", "a", 23, command);
 
-        command.display();
+        user.display();
 
-        command.fetch(3);
+        user.fetch(3);
 
         Product add = new Product(1, "p3", 30, new GregorianCalendar(2021, 12, 02));
-        command.add(add);
+        user.add(add);
 
-        command.delete(3);
+        user.delete(3);
 
-        command.update(1, "d1", -1, null);
+        user.update(1, "d1", -1, null);
 
-        command.display();
+        user.display();
 
         //Question 2
         LOGGER.setLevel(Level.INFO);
