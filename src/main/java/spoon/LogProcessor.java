@@ -9,7 +9,7 @@ public class LogProcessor extends AbstractProcessor<CtExecutable> {
    /** @Override
     public boolean isToBeProcessed(CtExecutable candidate) {
         System.out.println(candidate.getParent().toString());
-        if(candidate.getSignature().toString() == "Command")
+        if(candidate.getSignature().toString() == "utils.Command")
             return true;
         return false;
     }**/

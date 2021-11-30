@@ -2,7 +2,7 @@ public class HTMLFormateur extends java.util.logging.Formatter {
     // inherited abstract method to be implemented to define formatting behavior
     @java.lang.Override
     public java.lang.String format(java.util.logging.LogRecord record) {
-        System.out.println("Enter in the method format from class HTMLFormateur");;
+        System.out.println("Enter in the method format from class utils.HTMLFormateur");;
         java.lang.StringBuffer buf = new java.lang.StringBuffer(1000);
         buf.append("<tr>/n");
         // color any levels >= WARNING in red
@@ -27,7 +27,7 @@ public class HTMLFormateur extends java.util.logging.Formatter {
     }
 
     private java.lang.String calcDate(long millis) {
-        System.out.println("Enter in the method calcDate from class HTMLFormateur");;
+        System.out.println("Enter in the method calcDate from class utils.HTMLFormateur");;
         java.text.SimpleDateFormat dateFormat = new java.text.SimpleDateFormat("MMM dd,yyyy HH:mm");
         java.util.Date resultDate = new java.util.Date(millis);
         return dateFormat.format(resultDate);
@@ -36,7 +36,7 @@ public class HTMLFormateur extends java.util.logging.Formatter {
     // method invoked just after the formatter is created
     @java.lang.Override
     public java.lang.String getHead(java.util.logging.Handler h) {
-        System.out.println("Enter in the method getHead from class HTMLFormateur");;
+        System.out.println("Enter in the method getHead from class utils.HTMLFormateur");;
         java.lang.StringBuffer buf = new java.lang.StringBuffer(10000);
         buf.append("<!DOCTYPE html>\n");
         buf.append("\t<head>\n");
@@ -61,7 +61,7 @@ public class HTMLFormateur extends java.util.logging.Formatter {
     // method invoked just after the formatter is closed
     @java.lang.Override
     public java.lang.String getTail(java.util.logging.Handler h) {
-        System.out.println("Enter in the method getTail from class HTMLFormateur");;
+        System.out.println("Enter in the method getTail from class utils.HTMLFormateur");;
         java.lang.StringBuffer buf = new java.lang.StringBuffer(100);
         buf.append("\t\t</table>\n");
         buf.append("\t</body>\n");
