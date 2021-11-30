@@ -4,7 +4,7 @@ import java.util.logging.*;
 import spoon.Launcher;
 import spoon.LogProcessor;
 import utils.Command;
-import utils.HTMLFormateur;
+import utils.HTMLFormateurTest;
 import utils.Product;
 import utils.User;
 
@@ -44,17 +44,17 @@ public class Main {
         LogManager.getLogManager()
                 .getLogger(Logger.GLOBAL_LOGGER_NAME)
                 .setLevel(Level.FINE);
-        HTMLFormateur htmlFormateur = new HTMLFormateur();
+        HTMLFormateurTest htmlFormateurTest = new HTMLFormateurTest();
         Handler fileHandler = null;
 
         try{
             fileHandler = new FileHandler("./commands.log");
             LOGGER.addHandler(fileHandler);
-            fileHandler.setFormatter(htmlFormateur);
+            fileHandler.setFormatter(htmlFormateurTest);
 
             fileHandler.setLevel(Level.ALL);
             LOGGER.setLevel(Level.ALL);
-            LOGGER.finest("Finnest message: Logger with SIMPLE FORMATTER");
+            LOGGER.finer("Finnest message: Logger with SIMPLE FORMATTER");
         }catch (Exception e){
             LOGGER.log(Level.SEVERE, "Error occur in FileHandler.", e);
         }

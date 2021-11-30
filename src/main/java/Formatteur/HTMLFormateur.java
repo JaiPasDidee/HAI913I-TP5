@@ -8,10 +8,10 @@ import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 
-public class HTMLFormatteurWrite extends Formatter {
+public class HTMLFormateur extends Formatter {
     User user;
 
-    public HTMLFormatteurWrite(User user) {
+    public HTMLFormateur(User user) {
         this.user = user;
     }
 
@@ -47,7 +47,7 @@ public class HTMLFormatteurWrite extends Formatter {
         buf.append("User email : "+ user.getEmail());
         buf.append("</td>\n");
         buf.append("\t<td>");
-        buf.append("Profile that mostly performed write operations");
+        buf.append(formatMessage(record));
         buf.append("</td>\n");
         buf.append("</tr>\n");
         return buf.toString();
