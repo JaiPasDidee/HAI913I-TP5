@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.LogRecord;
 
 
-public class HTMLFormateur extends Formatter{
+public class HTMLFormateurTest extends Formatter{
 
         // inherited abstract method to be implemented to define formatting behavior
         @Override

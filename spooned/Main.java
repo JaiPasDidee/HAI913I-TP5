@@ -35,7 +35,7 @@ public class Main {
             fileHandler.setFormatter(htmlFormateur);
             fileHandler.setLevel(java.util.logging.Level.ALL);
             Main.LOGGER.setLevel(java.util.logging.Level.ALL);
-            Main.LOGGER.finest("Finnest message: Logger with SIMPLE FORMATTER");
+            Main.LOGGER.finer("Finnest message: Logger with SIMPLE FORMATTER");
         } catch (java.lang.Exception e) {
             Main.LOGGER.log(java.util.logging.Level.SEVERE, "Error occur in FileHandler.", e);
         }
