@@ -55,11 +55,12 @@ public class Main {
             fileHandler.setLevel(Level.ALL);
             LOGGER.setLevel(Level.ALL);
             LOGGER.finest("Finnest message: Logger with SIMPLE FORMATTER");
+
         }catch (Exception e){
             LOGGER.log(Level.SEVERE, "Error occur in FileHandler.", e);
         }
 
-        //Qestion 3
+        //Question 3
         Launcher spoon = new Launcher();
         LogProcessor logProcessor = new LogProcessor();
         spoon.addInputResource("./src/");

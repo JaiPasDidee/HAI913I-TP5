@@ -1,6 +1,8 @@
 package utils;
 
 import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class User {
 
@@ -80,6 +82,7 @@ public class User {
     //fetch a product by its ID (if no product with the provided ID exists,
     //an exception must be thrown).
     public void fetch(int id)throws Exception{
+
         command.fetch(id);
     }
 

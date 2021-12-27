@@ -2,31 +2,39 @@ package spoon;
 import spoon.processing.AbstractProcessor;
 import spoon.reflect.code.CtCodeSnippetStatement;
 import spoon.reflect.declaration.CtClass;
+import spoon.reflect.declaration.CtElement;
 import spoon.reflect.declaration.CtExecutable;
 
 public class LogProcessor extends AbstractProcessor<CtExecutable> {
 
-   /** @Override
-    public boolean isToBeProcessed(CtExecutable candidate) {
-        System.out.println(candidate.getParent().toString());
-        if(candidate.getSignature().toString() == "utils.Command")
-            return true;
-        return false;
-    }**/
+   @Override
+    public boolean isToBeProcessed(CtExecutable element) {
+       String methodName = element.getSimpleName();
+       CtClass classe = element.getParent(CtClass.class);
+
+       return classe != null && classe.getQualifiedName().equals("utils.User");
+   }
 
     @Override
     public void process(CtExecutable element) {
+        if(element.getBody() == null)
+            return;
+
+        String methodName = element.getSimpleName();
         CtCodeSnippetStatement snippet = getFactory().Core().createCodeSnippetStatement();
 
         // Snippet which contains the log.
-        final String value = String.format("LOGGER.log(Level.SEVERE, \"Error occur in FileHandler.\", e);",
-                element.getSimpleName(),
-                element.getParent(CtClass.class).getSimpleName());
-        snippet.setValue(value);
+        final String value;
 
         // Inserts the snippet at the beginning of the method body.
-        if (element.getBody() != null) {
-            element.getBody().insertBegin(snippet);
+        switch(methodName) {
+            case "fetch":
+                value = "LOGGER.log(Level.FINER, \"test\");"; break;
+            default:
+                value = null;
         }
+
+        if(value != null)
+            snippet.setValue(value);
     }
 }
