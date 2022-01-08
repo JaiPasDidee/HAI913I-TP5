@@ -13,8 +13,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Main {
-
-
     //Questions 3, 4 and 5
     public static void main (String[] args) {
         Launcher spoon = new Launcher();
@@ -30,6 +28,10 @@ public class Main {
 
         User user1 = createUser(1, order);
         User user2 = createUser(2, order);
+        User user3 = createUser(3, order);
+        User user4 = createUser(4, order);
+        User user5 = createUser(5, order);
+
         Formatter formatter = new Formatter();
         Handler fileHandlerRead;
         Handler fileHandlerWrite;
@@ -62,6 +64,48 @@ public class Main {
 
             formatter.setUser(user2);
             user2.update(1, "aa", -1, null);
+
+            formatter.setUser(user4);
+            user4.fetch(1);
+            user4.add(new Product(1, "p3", 30, new GregorianCalendar(2021, Calendar.DECEMBER, 2)));
+
+            formatter.setUser(user1);
+            user1.display();
+
+            formatter.setUser(user3);
+            user3.delete(1);
+
+            formatter.setUser(user5);
+            user5.update(2, null, 50, null);
+            user5.display();
+
+            formatter.setUser(user2);
+            user2.display();
+            user2.add(new Product(1, "p1 bis", 100, new GregorianCalendar(2022, Calendar.JANUARY, 2)));
+            user2.fetch(2);
+
+            formatter.setUser(user1);
+            user1.display();
+            user1.add(new Product(4, "p4", 200, new GregorianCalendar(2023, Calendar.DECEMBER, 23)));
+            user1.fetch(4);
+
+            formatter.setUser(user4);
+            user4.display();
+            user4.fetch(4);
+
+            formatter.setUser(user3);
+            user3.fetch(4);
+
+            formatter.setUser(user5);
+            user5.fetch(4);
+
+            formatter.setUser(user2);
+            user2.fetch(4);
+            user2.display();
+
+            formatter.setUser(user1);
+            user1.delete(4);
+            user1.display();
 
         }catch (Exception e){
             LOGGER_READ.log(Level.SEVERE, "Error occur in FileHandler.", e);
