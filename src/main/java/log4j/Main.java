@@ -4,6 +4,7 @@ import ecommerce.Order;
 import ecommerce.Product;
 import ecommerce.User;
 
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,16 +15,16 @@ public class Main {
 
     public static void main (String[] args) throws Exception {
         //Question 1
-        Map<Integer, Product> products = new HashMap<Integer, Product>();
-        products.put(1,new Product(1, "p1", 20, new GregorianCalendar(2021, 11, 30)));
-        products.put(2,new Product(2, "p2", 25, new GregorianCalendar(2021, 11, 29)));
+        Map<Integer, Product> products = new HashMap<>();
+        products.put(1,new Product(1, "p1", 20, new GregorianCalendar(2021, Calendar.NOVEMBER, 30)));
+        products.put(2,new Product(2, "p2", 25, new GregorianCalendar(2021, Calendar.NOVEMBER, 29)));
         Order order = new Order(products);
         User user = new User(1, "nicolas","nicolas@gmail.com", "a", 23, order);
 
         user.display();
         user.fetch(3);
 
-        Product add = new Product(1, "p3", 30, new GregorianCalendar(2021, 12, 02));
+        Product add = new Product(1, "p3", 30, new GregorianCalendar(2021, Calendar.DECEMBER, 2));
 
         user.add(add);
         user.delete(3);
@@ -42,7 +43,7 @@ public class Main {
                 .getLogger(Logger.GLOBAL_LOGGER_NAME)
                 .setLevel(Level.FINE);
         Formatter formatter = new Formatter();
-        Handler fileHandler = null;
+        Handler fileHandler;
 
         try{
             fileHandler = new FileHandler("./commands.log");

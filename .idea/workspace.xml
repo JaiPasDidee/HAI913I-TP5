@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99ebe6ec-c85f-40f8-84cd-d3405cb549a8" name="Default Changelist" comment="Added .gitignore">
+    <list default="true" id="99ebe6ec-c85f-40f8-84cd-d3405cb549a8" name="Default Changelist" comment="Organized work">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ecommerce/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ecommerce/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ecommerce/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ecommerce/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ecommerce/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ecommerce/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/log4j/Formatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/log4j/Formatter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/log4j/LogProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/log4j/LogProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/log4j/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/log4j/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spoon/Formatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spoon/Formatter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spoon/LogProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spoon/LogProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spoon/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spoon/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +203,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="spoon.Main" />
       <module name="logger" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -284,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641650803426</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Organized work">
+      <created>1641651726003</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1641651726003</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -349,7 +365,8 @@
     <MESSAGE value="update HTMLFormateurWrite" />
     <MESSAGE value="Updated workflow" />
     <MESSAGE value="Added .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added .gitignore" />
+    <MESSAGE value="Organized work" />
+    <option name="LAST_COMMIT_MESSAGE" value="Organized work" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/util/Map.java">

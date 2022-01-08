@@ -2,7 +2,6 @@ package spoon;
 import spoon.processing.AbstractProcessor;
 import spoon.reflect.code.CtCodeSnippetStatement;
 import spoon.reflect.declaration.CtClass;
-import spoon.reflect.declaration.CtElement;
 import spoon.reflect.declaration.CtExecutable;
 
 public class LogProcessor extends AbstractProcessor<CtExecutable> {

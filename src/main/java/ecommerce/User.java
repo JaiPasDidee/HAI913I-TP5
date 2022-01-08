@@ -79,26 +79,25 @@ public class User {
 
     //fetch a product by its ID (if no product with the provided ID exists,
     //an exception must be thrown).
-    public void fetch(int id)throws Exception{
-
+    public void fetch(int id) {
         order.fetch(id);
     }
 
     //add a new product (if a product with the same ID already exists, an
     //exception must be thrown)
-    public void add (Product product)throws Exception{
+    public void add (Product product) {
         order.add(product);
     }
 
     //delete a product by its ID (if no product with the provided ID exists,
     //an exception must be thrown).
-    public void delete(int id)throws Exception{
+    public void delete(int id) {
         order.delete(id);
     }
 
     //update a product’s info (if no product with the provided ID exists,
     //an exception must be thrown)
-    public void update(int id, String name, int price, Calendar expiration_date)throws Exception{
+    public void update(int id, String name, int price, Calendar expiration_date) {
         order.update(id,name, price, expiration_date);
     }
 }

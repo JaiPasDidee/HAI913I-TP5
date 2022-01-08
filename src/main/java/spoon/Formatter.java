@@ -3,7 +3,6 @@ package spoon;
 import ecommerce.User;
 
 import java.util.Date;
-import java.util.logging.Formatter;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
@@ -17,40 +16,40 @@ public class Formatter extends java.util.logging.Formatter {
 
     @Override
     public String format(LogRecord record) {
-        StringBuffer buf = new StringBuffer(1000);
-        buf.append("\t\t\t\t<th style=\"width:15%\">"+ java.time.LocalTime.now()+"</th>\n");
-        buf.append("\t\t\t\t<th style=\"width:75%\">"+ record.getMessage()+"</th>\n");
-        buf.append("\t\t\t</tr>\n");
-        buf.append("<tr>/n");
+        StringBuilder builder = new StringBuilder();
+        builder.append("\t\t\t\t<th style=\"width:15%\">").append(java.time.LocalTime.now()).append("</th>\n");
+        builder.append("\t\t\t\t<th style=\"width:75%\">").append(record.getMessage()).append("</th>\n");
+        builder.append("\t\t\t</tr>\n");
+        builder.append("<tr>/n");
         // color any levels >= WARNING in red
         if(record.getLevel().intValue() >= Level.WARNING.intValue()) {
-            buf.append("\t<td style=\"color:red\">");
-            buf.append("<b>");
-            buf.append(record.getLevel());
-            buf.append("</b>");
+            builder.append("\t<td style=\"color:red\">");
+            builder.append("<b>");
+            builder.append(record.getLevel());
+            builder.append("</b>");
         }
         else {
-            buf.append("\t<td>");
-            buf.append(record.getLevel());
+            builder.append("\t<td>");
+            builder.append(record.getLevel());
         }
-        buf.append("</td>\n");
-        buf.append("\t<td>");
-        buf.append("User id : "+ user.getId());
-        buf.append("</td>\n");
-        buf.append("\t<td>");
-        buf.append("User name : "+ user.getName());
-        buf.append("</td>\n");
-        buf.append("\t<td>");
-        buf.append("User age : "+ user.getAge());
-        buf.append("</td>\n");
-        buf.append("\t<td>");
-        buf.append("User email : "+ user.getEmail());
-        buf.append("</td>\n");
-        buf.append("\t<td>");
-        buf.append(formatMessage(record));
-        buf.append("</td>\n");
-        buf.append("</tr>\n");
-        return buf.toString();
+        builder.append("</td>\n");
+        builder.append("\t<td>");
+        builder.append("User id : ").append(user.getId());
+        builder.append("</td>\n");
+        builder.append("\t<td>");
+        builder.append("User name : ").append(user.getName());
+        builder.append("</td>\n");
+        builder.append("\t<td>");
+        builder.append("User age : ").append(user.getAge());
+        builder.append("</td>\n");
+        builder.append("\t<td>");
+        builder.append("User email : ").append(user.getEmail());
+        builder.append("</td>\n");
+        builder.append("\t<td>");
+        builder.append(formatMessage(record));
+        builder.append("</td>\n");
+        builder.append("</tr>\n");
+        return builder.toString();
     }
 
     @Override
