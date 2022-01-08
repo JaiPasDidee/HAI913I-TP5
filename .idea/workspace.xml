@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99ebe6ec-c85f-40f8-84cd-d3405cb549a8" name="Default Changelist" comment="Refactored code">
-      <change afterPath="$PROJECT_DIR$/src/main/java/spoon/InitProcessor.java" afterDir="false" />
+    <list default="true" id="99ebe6ec-c85f-40f8-84cd-d3405cb549a8" name="Default Changelist" comment="Created InitProcessor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spoon/LogProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spoon/LogProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spoon/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spoon/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Formatteur/HTMLFormateur.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spoon/LogProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spoon/LogProcessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spoon/LogProcessorTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/Command.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/HTMLFormateurTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/Product.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/log4j/LogProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/log4j/LogProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spoon/InitProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spoon/InitProcessor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -310,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641652367934</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Created InitProcessor">
+      <created>1641656262602</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1641656262602</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -378,7 +376,8 @@
     <MESSAGE value="Added .gitignore" />
     <MESSAGE value="Organized work" />
     <MESSAGE value="Refactored code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored code" />
+    <MESSAGE value="Created InitProcessor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created InitProcessor" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/util/Map.java">
