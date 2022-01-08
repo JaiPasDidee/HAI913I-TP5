@@ -6,7 +6,6 @@ public class Main {
     public static void main (String[] args) {
         Launcher spoon = new Launcher();
         LogProcessor logProcessor = new LogProcessor();
-
         spoon.addInputResource("./src/");
         spoon.addProcessor(logProcessor);
         spoon.run();
