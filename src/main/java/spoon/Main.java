@@ -38,9 +38,9 @@ public class Main {
         Handler fileHandlerRead;
         Handler fileHandlerWrite;
         Handler fileHandlerExpensive;
-        Logger LOGGER_READ = order.getLOGGER();
-        Logger LOGGER_WRITE = order.getLOGGER();
-        Logger LOGGER_EXPENSIVE = order.getLOGGER();
+        Logger LOGGER_READ = order.getReadLogger();
+        Logger LOGGER_WRITE = order.getWriteLogger();
+        Logger LOGGER_EXPENSIVE = order.getExpensiveLogger();
 
         try{
             fileHandlerRead = new FileHandler("./logRead.log");

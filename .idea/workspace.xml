@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99ebe6ec-c85f-40f8-84cd-d3405cb549a8" name="Default Changelist" comment="Created InitProcessor">
+    <list default="true" id="99ebe6ec-c85f-40f8-84cd-d3405cb549a8" name="Default Changelist" comment="Finished InitProcessor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/log4j/LogProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/log4j/LogProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spoon/InitProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spoon/InitProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spoon/LogProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spoon/LogProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spoon/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spoon/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +56,7 @@
   </component>
   <component name="ProjectId" id="21mFXUnI2iQ5pZzcHKIrecmspsJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
@@ -308,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641656262602</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Finished InitProcessor">
+      <created>1641673029094</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1641673029094</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -377,7 +385,8 @@
     <MESSAGE value="Organized work" />
     <MESSAGE value="Refactored code" />
     <MESSAGE value="Created InitProcessor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created InitProcessor" />
+    <MESSAGE value="Finished InitProcessor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished InitProcessor" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/util/Map.java">
