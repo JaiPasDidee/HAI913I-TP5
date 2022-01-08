@@ -12,7 +12,7 @@ public class LogProcessor extends AbstractProcessor<CtExecutable> {
        String methodName = element.getSimpleName();
        CtClass classe = element.getParent(CtClass.class);
 
-       return classe != null && classe.getQualifiedName().equals("utils.User");
+       return classe != null && classe.getQualifiedName().equals("utils.Command");
    }
 
     @Override
