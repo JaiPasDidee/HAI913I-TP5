@@ -4,12 +4,11 @@ import spoon.reflect.code.CtCodeSnippetStatement;
 import spoon.reflect.declaration.CtClass;
 import spoon.reflect.declaration.CtExecutable;
 
-public class LogProcessor extends AbstractProcessor<CtExecutable> {
+public class LogProcessor extends AbstractProcessor<CtExecutable<?>> {
 
    @Override
     public boolean isToBeProcessed(CtExecutable element) {
-       String methodName = element.getSimpleName();
-       CtClass classe = element.getParent(CtClass.class);
+       CtClass<?> classe = element.getParent(CtClass.class);
 
        return classe != null && classe.getQualifiedName().equals("ecommerce.Order");
    }

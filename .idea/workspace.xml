@@ -4,17 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99ebe6ec-c85f-40f8-84cd-d3405cb549a8" name="Default Changelist" comment="Organized work">
+    <list default="true" id="99ebe6ec-c85f-40f8-84cd-d3405cb549a8" name="Default Changelist" comment="Refactored code">
+      <change afterPath="$PROJECT_DIR$/src/main/java/spoon/InitProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ecommerce/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ecommerce/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ecommerce/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ecommerce/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ecommerce/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ecommerce/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/log4j/Formatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/log4j/Formatter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/log4j/LogProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/log4j/LogProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/log4j/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/log4j/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spoon/Formatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spoon/Formatter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spoon/LogProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spoon/LogProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spoon/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spoon/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Formatteur/HTMLFormateur.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spoon/LogProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spoon/LogProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spoon/LogProcessorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/HTMLFormateurTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/User.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,6 +186,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -300,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641651726003</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Refactored code">
+      <created>1641652367934</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1641652367934</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -357,6 +367,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="update user" />
     <MESSAGE value="update Main" />
     <MESSAGE value="create html formatteur for Q.3" />
@@ -366,7 +377,8 @@
     <MESSAGE value="Updated workflow" />
     <MESSAGE value="Added .gitignore" />
     <MESSAGE value="Organized work" />
-    <option name="LAST_COMMIT_MESSAGE" value="Organized work" />
+    <MESSAGE value="Refactored code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored code" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/util/Map.java">
