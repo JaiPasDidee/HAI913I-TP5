@@ -1,6 +1,6 @@
-package Formatteur;
+package spoon;
 
-import utils.User;
+import ecommerce.User;
 
 import java.util.Date;
 import java.util.logging.Formatter;
@@ -8,10 +8,10 @@ import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 
-public class HTMLFormateur extends Formatter {
+public class Formatter extends java.util.logging.Formatter {
     User user;
 
-    public HTMLFormateur(User user) {
+    public Formatter(User user) {
         this.user = user;
     }
 

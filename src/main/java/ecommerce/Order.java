@@ -1,12 +1,12 @@
-package utils;
+package ecommerce;
 
 import java.util.Calendar;
 import java.util.Map;
 
-public class Command {
+public class Order {
     Map<Integer, Product> products;
 
-    public Command(Map<Integer, Product> products) {
+    public Order(Map<Integer, Product> products) {
         this.products = products;
     }
 

@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99ebe6ec-c85f-40f8-84cd-d3405cb549a8" name="Default Changelist" comment="Updated workflow" />
+    <list default="true" id="99ebe6ec-c85f-40f8-84cd-d3405cb549a8" name="Default Changelist" comment="Added .gitignore">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -275,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641650588369</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added .gitignore">
+      <created>1641650803426</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1641650803426</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -339,7 +348,8 @@
     <MESSAGE value="update HTMLFormateurRead" />
     <MESSAGE value="update HTMLFormateurWrite" />
     <MESSAGE value="Updated workflow" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated workflow" />
+    <MESSAGE value="Added .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added .gitignore" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/util/Map.java">

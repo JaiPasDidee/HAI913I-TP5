@@ -1,11 +1,11 @@
-package spoon;
+package log4j;
 import spoon.processing.AbstractProcessor;
 import spoon.reflect.code.CtCodeSnippetStatement;
 import spoon.reflect.declaration.CtClass;
 import spoon.reflect.declaration.CtElement;
 import spoon.reflect.declaration.CtExecutable;
 
-public class LogProcessorTest extends AbstractProcessor<CtExecutable> {
+public class LogProcessor extends AbstractProcessor<CtExecutable> {
 
     @Override
     public void process(CtExecutable element) {

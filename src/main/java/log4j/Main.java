@@ -1,36 +1,33 @@
-import java.util.*;
+package log4j;
+
+import ecommerce.Order;
+import ecommerce.Product;
+import ecommerce.User;
+
+import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.*;
 
-import spoon.Launcher;
-import spoon.LogProcessor;
-import utils.Command;
-import utils.HTMLFormateurTest;
-import utils.Product;
-import utils.User;
-
 public class Main {
+    private static final Logger LOGGER = Logger.getLogger(Order.class.getName());
 
-    private static final Logger LOGGER = Logger.getLogger(Command.class.getName());
-
-    public static void main (String[] args)throws Exception{
+    public static void main (String[] args) throws Exception {
         //Question 1
         Map<Integer, Product> products = new HashMap<Integer, Product>();
         products.put(1,new Product(1, "p1", 20, new GregorianCalendar(2021, 11, 30)));
         products.put(2,new Product(2, "p2", 25, new GregorianCalendar(2021, 11, 29)));
-        Command command = new Command(products);
-        User user = new User(1, "nicolas","nicolas@gmail.com", "a", 23, command);
+        Order order = new Order(products);
+        User user = new User(1, "nicolas","nicolas@gmail.com", "a", 23, order);
 
         user.display();
-
         user.fetch(3);
 
         Product add = new Product(1, "p3", 30, new GregorianCalendar(2021, 12, 02));
+
         user.add(add);
-
         user.delete(3);
-
         user.update(1, "d1", -1, null);
-
         user.display();
 
         //Question 2
@@ -44,13 +41,13 @@ public class Main {
         LogManager.getLogManager()
                 .getLogger(Logger.GLOBAL_LOGGER_NAME)
                 .setLevel(Level.FINE);
-        HTMLFormateurTest htmlFormateurTest = new HTMLFormateurTest();
+        Formatter formatter = new Formatter();
         Handler fileHandler = null;
 
         try{
             fileHandler = new FileHandler("./commands.log");
             LOGGER.addHandler(fileHandler);
-            fileHandler.setFormatter(htmlFormateurTest);
+            fileHandler.setFormatter(formatter);
 
             fileHandler.setLevel(Level.ALL);
             LOGGER.setLevel(Level.ALL);
@@ -59,15 +56,5 @@ public class Main {
         }catch (Exception e){
             LOGGER.log(Level.SEVERE, "Error occur in FileHandler.", e);
         }
-
-        //Question 3
-        Launcher spoon = new Launcher();
-        LogProcessor logProcessor = new LogProcessor();
-        spoon.addInputResource("./src/");
-
-        spoon.addProcessor(logProcessor);
-
-        spoon.run();
-
     }
 }

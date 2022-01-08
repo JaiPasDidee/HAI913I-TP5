@@ -1,4 +1,4 @@
-package utils;
+package log4j;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.LogRecord;
 
 
-public class HTMLFormateurTest extends Formatter{
+public class Formatter extends java.util.logging.Formatter {
 
         // inherited abstract method to be implemented to define formatting behavior
         @Override
