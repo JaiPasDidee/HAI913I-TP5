@@ -10,7 +10,7 @@ import java.util.logging.LogRecord;
 public class Formatter extends java.util.logging.Formatter {
     User user;
 
-    public Formatter(User user) {
+    public void setUser(User user) {
         this.user = user;
     }
 
@@ -18,7 +18,6 @@ public class Formatter extends java.util.logging.Formatter {
     public String format(LogRecord record) {
         StringBuilder builder = new StringBuilder();
         builder.append("\t\t\t\t<th style=\"width:15%\">").append(java.time.LocalTime.now()).append("</th>\n");
-        builder.append("\t\t\t\t<th style=\"width:75%\">").append(record.getMessage()).append("</th>\n");
         builder.append("\t\t\t</tr>\n");
         builder.append("<tr>/n");
         // color any levels >= WARNING in red
