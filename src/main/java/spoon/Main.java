@@ -33,6 +33,7 @@ public class Main {
         User user4 = createUser(4, order);
         User user5 = createUser(5, order);
 
+        //TODO modifier le main pour ger les bons logger
         Formatter formatter = new Formatter();
         Handler fileHandlerRead;
         Handler fileHandlerWrite;
@@ -107,6 +108,8 @@ public class Main {
             formatter.setUser(user1);
             user1.delete(4);
             user1.display();
+
+            //TODO faire d'autres scenarios ?
 
         }catch (Exception e){
             LOGGER_READ.log(Level.SEVERE, "Error occur in FileHandler.", e);
