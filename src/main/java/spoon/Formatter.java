@@ -17,9 +17,7 @@ public class Formatter extends java.util.logging.Formatter {
     @Override
     public String format(LogRecord record) {
         StringBuilder builder = new StringBuilder();
-        builder.append("\t\t\t\t<th style=\"width:15%\">").append(java.time.LocalTime.now()).append("</th>\n");
-        builder.append("\t\t\t</tr>\n");
-        builder.append("<tr>/n");
+        builder.append("<tr>\n");
         // color any levels >= WARNING in red
         if(record.getLevel().intValue() >= Level.WARNING.intValue()) {
             builder.append("\t<td style=\"color:red\">");
@@ -32,6 +30,8 @@ public class Formatter extends java.util.logging.Formatter {
             builder.append(record.getLevel());
         }
         builder.append("</td>\n");
+        builder.append("\t<td style=\"width:15%\">").append(java.time.LocalTime.now()).append("</td>\n");
+
         builder.append("\t<td>");
         builder.append("User id : ").append(user.getId());
         builder.append("</td>\n");
@@ -66,7 +66,6 @@ public class Formatter extends java.util.logging.Formatter {
         buf.append("\t<body>\n");
         buf.append("\t\t<h1>" + (new Date()) + "\n");
         buf.append("\t\t<table border=\"0\" cellpadding=\"5\" cellspacing=\"3\">\n");
-        buf.append("\t\t\t<tr align=\"left\">\n");
         return buf.toString();
     }
 
