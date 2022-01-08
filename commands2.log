@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+	<head>
+		<style>
+		table { width: 100% }
+		th { font: bold 10pt Tahoma; }
+		td { font: normal 10pt Tahoma; }
+		h1 { font: normal 11pt Tahoma; }
+		</style>
+	</head>
+	<body>
+		<h1>Sat Jan 08 16:30:46 CET 2022
+		<table border="0" cellpadding="5" cellspacing="3">
+<tr>
+	<td>FINEST</td>
+	<td style="width:15%">16:30:46.384719900</td>
+	<td>User id : 1</td>
+	<td>User name : cbiqqekqma</td>
+	<td>User age : 86</td>
+	<td>User email : jirycnuuui@gmail.com</td>
+	<td>Finnest message: Logger with SIMPLE FORMATTER display</td>
+</tr>
+<tr>
+	<td>FINEST</td>
+	<td style="width:15%">16:30:46.404180700</td>
+	<td>User id : 2</td>
+	<td>User name : yqjjrubryc</td>
+	<td>User age : 32</td>
+	<td>User email : xnrjlynbob@gmail.com</td>
+	<td>Finnest message: Logger with SIMPLE FORMATTER2 uptade</td>
+</tr>
+		</table>
+	</body>
+</html>
