@@ -1,0 +1,6 @@
+[
+{ "user": { "id": 3, "name": "Patrick", "email": "pat.dupont@gmail.com", "age": 46 }, "operations": 12 },
+{ "user": { "id": 4, "name": "Lucas", "email": "XxLucasxX@gmail.com", "age": 17 }, "operations": 12 },
+{ "user": { "id": 1, "name": "Georges", "email": "georges97@gmail.com", "age": 75 }, "operations": 6 },
+{ "user": { "id": 5, "name": "Camille", "email": "camz21@orange.fr", "age": 32 }, "operations": 4 }
+]
