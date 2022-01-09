@@ -1,15 +1,24 @@
 package ecommerce;
 
-import java.util.Calendar;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class User {
     private static final AtomicInteger primaryKey = new AtomicInteger(0);
-    private int id;
+    @JsonProperty("id")
+    private final int id;
+    @JsonProperty("name")
     private String name;
+    @JsonProperty("email")
     private String email;
-    private String password;
+    @JsonProperty("age")
     private int age;
+    private String password;
+
+    public User() {
+        id = primaryKey.incrementAndGet();
+    }
 
     public User(String name, String email, String password, int age) {
         id = primaryKey.incrementAndGet();
@@ -24,6 +33,19 @@ public class User {
         String json = "{ \"id\": %d, \"name\": \"%s\", \"email\": \"%s\", \"age\": %d }";
 
         return String.format(json, id, name, email, age);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if(!(o instanceof User))
+            return false;
+
+        return ((User) o).getId() == id;
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
     }
 
     public int getId() {

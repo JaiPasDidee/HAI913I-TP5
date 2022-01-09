@@ -1,4 +1,4 @@
-package log4j;
+package ecommerce;
 
 import java.util.logging.Handler;
 import java.util.logging.LogRecord;
@@ -7,16 +7,16 @@ public class Formatter extends java.util.logging.Formatter {
 
     @Override
     public String format(LogRecord record) {
-        return record.getMessage();
+        return record.getMessage() + "\n";
     }
 
     @Override
     public String getHead(Handler h) {
-        return "[";
+        return "";
     }
 
     @Override
     public String getTail(Handler h) {
-        return "]";
+        return "";
     }
 }

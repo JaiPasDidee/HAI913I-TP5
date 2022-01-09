@@ -1,16 +1,27 @@
 package ecommerce;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Product {
     private static final AtomicInteger primaryKey = new AtomicInteger(0);
-    private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+    private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    @JsonProperty("id")
     private final int id;
+    @JsonProperty("name")
     private String name;
+    @JsonProperty("price")
     private int price;
+    @JsonIgnore
     private LocalDate expirationDate;
+
+    public Product() {
+        id = primaryKey.incrementAndGet();
+    }
 
     public Product(String name, int price, LocalDate expirationDate) {
         id = primaryKey.incrementAndGet();
@@ -21,9 +32,17 @@ public class Product {
 
     @Override
     public String toString() {
-        String json = "{ \"id\": %d, \"name\": \"%s\", \"expirationDate\": \"%s\", \"price\": %d }";
+        String json = "{ \"id\": %d, \"name\": \"%s\", \"price\": %d }";
 
         return String.format(json, id, name, dtf.format(expirationDate), price);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if(!(o instanceof Product))
+            return false;
+
+        return ((Product) o).getId() == id;
     }
 
     public int getId() {

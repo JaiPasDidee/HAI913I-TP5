@@ -12,11 +12,15 @@ public class Main {
         InitProcessor initProcessor = new InitProcessor();
         LogProcessor logProcessor = new LogProcessor();
 
-        spoon.addInputResource("./src/");
+        spoon.addInputResource("./src/main/java/ecommerce");
+        spoon.setSourceOutputDirectory("./spooned/src/main/java");
+        spoon.getEnvironment().setSourceClasspath(new String[] { "./target" });
         spoon.getEnvironment().setAutoImports(true);
         spoon.addProcessor(mainProcessor);
         spoon.addProcessor(initProcessor);
         spoon.addProcessor(logProcessor);
         spoon.run();
+
+        System.out.println("La génération de code pour la traçabilité a été effectuée.");
     }
 }

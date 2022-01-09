@@ -22,19 +22,19 @@ public class MainProcessor extends AbstractProcessor<CtExecutable<?>> {
         CtCodeSnippetStatement snippet = getFactory().Core().createCodeSnippetStatement();
         snippet.setValue("try{\n" +
                 "            Formatter formatter = new Formatter();\n" +
-                "            Handler readFH = new FileHandler(\"./reads.log\");\n" +
-                "            Handler writeFH = new FileHandler(\"./writes.log\");\n" +
-                "            Logger readLogger = Repository.getReadLogger();\n" +
-                "            Logger writeLogger = Repository.getWriteLogger();\n" +
+                "            java.util.logging.Handler readFH = new java.util.logging.FileHandler(\"./reads.log\");\n" +
+                "            java.util.logging.Handler writeFH = new java.util.logging.FileHandler(\"./writes.log\");\n" +
+                "            java.util.logging.Logger readLogger = Repository.getReadLogger();\n" +
+                "            java.util.logging.Logger writeLogger = Repository.getWriteLogger();\n" +
                 "\n" +
                 "            readFH.setFormatter(formatter);\n" +
-                "            readFH.setLevel(Level.ALL);\n" +
-                "            readLogger.setLevel(Level.ALL);\n" +
+                "            readFH.setLevel(java.util.logging.Level.ALL);\n" +
+                "            readLogger.setLevel(java.util.logging.Level.ALL);\n" +
                 "            readLogger.addHandler(readFH);\n" +
                 "\n" +
                 "            writeFH.setFormatter(formatter);\n" +
-                "            writeFH.setLevel(Level.ALL);\n" +
-                "            writeLogger.setLevel(Level.ALL);\n" +
+                "            writeFH.setLevel(java.util.logging.Level.ALL);\n" +
+                "            writeLogger.setLevel(java.util.logging.Level.ALL);\n" +
                 "            writeLogger.addHandler(writeFH);\n" +
                 "        }catch (Exception e){\n" +
                 "            System.err.println(\"Impossible d'initialiser les loggers...\");\n" +

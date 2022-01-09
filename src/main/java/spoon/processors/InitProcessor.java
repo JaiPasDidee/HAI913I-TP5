@@ -4,7 +4,6 @@ import spoon.processing.AbstractProcessor;
 import spoon.reflect.code.CtBlock;
 import spoon.reflect.code.CtCodeSnippetExpression;
 import spoon.reflect.code.CtCodeSnippetStatement;
-import spoon.reflect.code.CtStatement;
 import spoon.reflect.declaration.CtClass;
 import spoon.reflect.declaration.CtField;
 import spoon.reflect.declaration.CtMethod;
@@ -34,7 +33,7 @@ public class InitProcessor extends AbstractProcessor<CtClass<?>> {
         CtTypeReference<Object> fieldType = element.getFactory().createTypeParameterReference(Logger.class.getCanonicalName());
         EnumSet<ModifierKind> modifiers = EnumSet.of(ModifierKind.STATIC, ModifierKind.PRIVATE, ModifierKind.FINAL);
 
-        snippet.setValue("Logger.getLogger(\"" + name.toLowerCase(Locale.ROOT) + element.getSimpleName() + "\")");
+        snippet.setValue("java.util.logging.Logger.getLogger(\"" + name.toLowerCase(Locale.ROOT) + element.getSimpleName() + "\")");
         CtField<?> field = element.getFactory().createField(element, modifiers, fieldType, name.toUpperCase(Locale.ROOT) + "_LOGGER", snippet);
 
         element.addField(field);

@@ -48,7 +48,7 @@ public class LogProcessor extends AbstractProcessor<CtExecutable<?>> {
     }
 
     private String log(String event, String action) {
-       String template = "Repository.get%sLogger().log(Level.FINER, \"[%s - %s] L'utilisateur \" + user + \" a réalisé l'opération %s";
+       String template = "Repository.get%sLogger().log(java.util.logging.Level.FINER, \"[%s - %s] L'utilisateur \" + user + \" a réalisé l'opération %s";
        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
        LocalDateTime now = LocalDateTime.now();
        template += action.equals("display") ? "\")" : " sur le produit \" + product)";

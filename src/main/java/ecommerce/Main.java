@@ -1,8 +1,26 @@
 package ecommerce;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class Main {
+
+    private static final Map<User, Integer> mostReads = new HashMap<>();
+    private static final Map<User, Integer> mostWrites = new HashMap<>();
+    private static final Map<User, Product> mostExpensive = new HashMap<>();
 
     public static void main(String[] args) {
         // Création de la liste des produits
@@ -11,6 +29,20 @@ public class Main {
         createLoggers();
         // Réalisation des scénarios utilisateur
         makeScenarios();
+
+        try {
+            // Extraction des profils utilisateur
+            extractProfiles("./reads.log");
+            extractProfiles("./writes.log");
+            // Sauvegarde des profils extraits
+            saveProfile("./mostReads.json", mostReads);
+            saveProfile("./mostWrites.json", mostWrites);
+            saveProfile("./mostExpensive.json", null);
+
+            System.out.println("Les profils ont bien été créés.");
+        } catch (Exception e) {
+            System.err.println("Une erreur est survenue pendant l'extraction des profils...");
+        }
     }
 
     private static void makeScenarios() {
@@ -78,6 +110,89 @@ public class Main {
         // Scénario pour user5 (un peu de tout)
         // TODO
         Repository.fetch(user5, 9);
+    }
+
+    private static void extractProfiles(String file) throws Exception {
+        Path path = Paths.get(file);
+        List<String> logs = Files.readAllLines(path);
+        Pattern pattern1 = Pattern.compile("(\\{.*}) a réalisé l'opération (.*) sur le produit (\\{.*})");
+        Pattern pattern2 = Pattern.compile("(\\{.*}) a réalisé l'opération (.*) sur le produit (\\d*)");
+        Pattern pattern3 = Pattern.compile("(\\{.*}) a réalisé l'opération (.*)");
+        Matcher matcher1, matcher2, matcher3;
+        ObjectMapper mapper = new ObjectMapper();
+
+        for(String log : logs) {
+            matcher1 = pattern1.matcher(log);
+            matcher2 = pattern2.matcher(log);
+            matcher3 = pattern3.matcher(log);
+
+            User user = null;
+            Product product = null;
+
+            if(matcher1.find()) {
+                user = mapper.readValue(matcher1.group(1), User.class);
+                product = mapper.readValue(matcher1.group(3), Product.class);
+            } else if(matcher2.find())
+                user = mapper.readValue(matcher2.group(1), User.class);
+            else if(matcher3.find())
+                user = mapper.readValue(matcher3.group(1), User.class);
+
+            if(user == null)
+                continue;
+
+            if(file.equals("./reads.log")) {
+                incrementOperation(user, mostReads);
+                incrementExpensive(user, product);
+            } else
+                incrementOperation(user, mostWrites);
+        }
+    }
+
+    private static void saveProfile(String path, Map<User, Integer> profile) throws Exception {
+        String result = profile == null ? toJson() : toJson(profile);
+        File file = new File(path);
+        file.createNewFile();
+
+        FileWriter fileWriter = new FileWriter(path);
+
+        fileWriter.write("[\n" + result + "\n]");
+        fileWriter.close();
+    }
+
+    private static String toJson(Map<User, Integer> profile) {
+        String template = "{ \"user\": %s, \"operations\": %s }";
+
+        return profile.entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .map(entry -> String.format(template, entry.getKey(), entry.getValue()))
+                .collect(Collectors.joining(",\n"));
+    }
+
+    private static String toJson() {
+        String template = "{ \"user\": %s, \"mostExpensiveProduct\": %s }";
+
+        return mostExpensive.entrySet()
+                .stream()
+                .sorted(Comparator.comparing(entry -> ((Map.Entry<User, Product>) entry).getValue().getPrice()).reversed())
+                .map(entry -> String.format(template, entry.getKey(), entry.getValue()))
+                .collect(Collectors.joining(",\n"));
+    }
+
+    private static void incrementOperation(User user, Map<User, Integer> profile) {
+        if(profile.containsKey(user))
+            profile.put(user, profile.get(user)+1);
+        else
+            profile.put(user, 1);
+    }
+
+    private static void incrementExpensive(User user, Product product) {
+        if(product == null)
+            return;
+
+        if(!mostExpensive.containsKey(user) ||
+                (mostExpensive.containsKey(user) && mostExpensive.get(user).getPrice() < product.getPrice()))
+            mostExpensive.put(user, product);
     }
 
     private static void createLoggers() { }

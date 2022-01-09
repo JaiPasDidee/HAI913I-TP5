@@ -1,5 +1,6 @@
 package log4j;
 
+import ecommerce.Formatter;
 import ecommerce.Repository;
 import ecommerce.User;
 
@@ -27,7 +28,7 @@ public class Main {
         LogManager.getLogManager()
                 .getLogger(Logger.GLOBAL_LOGGER_NAME)
                 .setLevel(Level.FINE);
-        Formatter formatter = new Formatter();
+        ecommerce.Formatter formatter = new Formatter();
         Handler fileHandler;
 
         try{
