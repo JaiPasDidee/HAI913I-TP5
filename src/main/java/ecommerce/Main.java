@@ -69,13 +69,13 @@ public class Main {
         // Scénario pour user2 (écriture uniquement)
         Repository.add(user2, new Product("P9", 2499));
         Repository.add(user2, new Product("P10", 1));
-        Repository.update(user2, 10, null, 2);
+        Repository.update(user2, 10, null, 2, null);
         Repository.add(user2, new Product("P11", 14));
         Repository.add(user2, new Product("P12", 570));
         Repository.delete(user2, 11);
         Repository.add(user2, new Product("P13", 68));
-        Repository.update(user2, 7, "P7u", -1);
-        Repository.update(user2, 13, "P13u", 69);
+        Repository.update(user2, 7, "P7u", -1, null);
+        Repository.update(user2, 13, "P13u", 69, null);
         Repository.delete(user2, 5);
 
         // Scénario pour user3 (lecture uniquement)
@@ -108,13 +108,13 @@ public class Main {
 
         // Scénario pour user5 (un peu de tout)
         Repository.display(user5);
-        Repository.update(user5, 13, null, 690);
+        Repository.update(user5, 13, null, 690, null);
         Repository.fetch(user5, 13);
         Repository.add(user5, new Product("P14", 2));
         Repository.delete(user5, 14);
         Repository.display(user5);
         Repository.add(user5, new Product("P15", 10));
-        Repository.update(user5, 15, "P15u", -1);
+        Repository.update(user5, 15, "P15u", -1, null);
         Repository.fetch(user5, 15);
         Repository.delete(user5, 15);
     }

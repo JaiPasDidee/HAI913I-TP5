@@ -1,5 +1,6 @@
 package ecommerce;
 
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -57,7 +58,7 @@ public class Repository {
 
     //update a product’s info (if no product with the provided ID exists,
     //an exception must be thrown)
-    public static void update(User user, int id, String name, int price) {
+    public static void update(User user, int id, String name, int price, LocalDate expirationDate) {
         if(!products.containsKey(id)) {
             System.err.println("Le produit que vous souhaitez mettre à jour n'existe pas...");
             return;
@@ -70,5 +71,8 @@ public class Repository {
 
         if(price > -1)
             product.setPrice(price);
+
+        if(expirationDate != null)
+            product.setExpirationDate(expirationDate);
     }
 }

@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99ebe6ec-c85f-40f8-84cd-d3405cb549a8" name="Default Changelist" comment="Finished project (before tests)">
+    <list default="true" id="99ebe6ec-c85f-40f8-84cd-d3405cb549a8" name="Default Changelist" comment="Finished project (after tests)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ecommerce/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ecommerce/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ecommerce/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ecommerce/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ecommerce/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ecommerce/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spoon/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spoon/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/log4j/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/log4j/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,13 +201,26 @@
       <recent name="spoon" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Main (2)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ecommerce.Main" />
       <module name="logger" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ecommerce.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="log4j.Main" />
+      <module name="logger" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="log4j.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -224,6 +237,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (1)" />
       </list>
@@ -356,7 +370,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641757807701</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Finished project (after tests)">
+      <created>1641759380797</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1641759380797</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -429,7 +450,8 @@
     <MESSAGE value="Updated LogProcessor" />
     <MESSAGE value="Refactored code + finished code generation" />
     <MESSAGE value="Finished project (before tests)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished project (before tests)" />
+    <MESSAGE value="Finished project (after tests)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished project (after tests)" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/util/Map.java">

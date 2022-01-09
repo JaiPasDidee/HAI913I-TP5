@@ -1,7 +1,12 @@
 package ecommerce;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.text.DateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Product {
@@ -12,22 +17,27 @@ public class Product {
     private String name;
     @JsonProperty("price")
     private int price;
+    @JsonIgnore
+    private LocalDate expirationDate;
 
     public Product() {
         id = primaryKey.incrementAndGet();
+        expirationDate = LocalDate.now().plusYears(1);
     }
 
     public Product(String name, int price) {
         id = primaryKey.incrementAndGet();
         this.name = name;
         this.price = price;
+        expirationDate = LocalDate.now().plusYears(1);
     }
 
     @Override
     public String toString() {
-        String json = "{ \"id\": %d, \"name\": \"%s\", \"price\": %d }";
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yy");
+        String json = "{ \"id\": %d, \"name\": \"%s\", \"expirationDate\": \"%s\", \"price\": %d }";
 
-        return String.format(json, id, name, price);
+        return String.format(json, id, name, df.format(expirationDate), price);
     }
 
     @Override
@@ -55,4 +65,8 @@ public class Product {
     public void setPrice(int price) {
         this.price = price;
     }
+
+    public LocalDate getExpirationDate() { return expirationDate; }
+
+    public void setExpirationDate(LocalDate expirationDate) { this.expirationDate = expirationDate; }
 }
