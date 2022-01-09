@@ -1,4 +1,4 @@
-package spoon;
+package spoon.processors;
 
 import spoon.processing.AbstractProcessor;
 import spoon.reflect.code.CtBlock;
@@ -19,7 +19,7 @@ public class InitProcessor extends AbstractProcessor<CtClass<?>> {
 
     @Override
     public boolean isToBeProcessed(CtClass element) {
-        return element.getQualifiedName().equals("ecommerce.Order");
+        return element.getQualifiedName().equals("ecommerce.Repository");
     }
 
     @Override
@@ -27,7 +27,6 @@ public class InitProcessor extends AbstractProcessor<CtClass<?>> {
         // Create the loggers in the class
         createLogger(element, "Read");
         createLogger(element, "Write");
-        createLogger(element, "Expensive");
     }
 
     private void createLogger(CtClass<?> element, String name) {

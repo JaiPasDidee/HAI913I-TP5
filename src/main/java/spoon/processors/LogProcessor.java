@@ -1,4 +1,4 @@
-package spoon;
+package spoon.processors;
 import spoon.processing.AbstractProcessor;
 import spoon.reflect.code.CtCodeSnippetStatement;
 import spoon.reflect.declaration.CtClass;
@@ -14,7 +14,7 @@ public class LogProcessor extends AbstractProcessor<CtExecutable<?>> {
     public boolean isToBeProcessed(CtExecutable element) {
        CtClass<?> classe = element.getParent(CtClass.class);
 
-       return classe != null && classe.getQualifiedName().equals("ecommerce.Order");
+       return classe != null && classe.getQualifiedName().equals("ecommerce.Repository");
    }
 
     @Override
@@ -23,9 +23,8 @@ public class LogProcessor extends AbstractProcessor<CtExecutable<?>> {
             return;
 
         String methodName = element.getSimpleName();
-        CtCodeSnippetStatement snippet = getFactory().Core().createCodeSnippetStatement();
-
         // Snippet which contains the log.
+        CtCodeSnippetStatement snippet = getFactory().Core().createCodeSnippetStatement();
         final String event;
 
         // Inserts the snippet at the beginning of the method body.
@@ -34,21 +33,26 @@ public class LogProcessor extends AbstractProcessor<CtExecutable<?>> {
             case "fetch":
                 event = "Read"; break;
             case "add":
+            case "update":
             case "delete":
                 event = "Write"; break;
             default:
                 event = null;
         }
 
-        if(event != null)
-            snippet.setValue(log(event, "TODO", methodName)); // TODO
+        if(event == null)
+            return;
+
+        snippet.setValue(log(event, methodName));
+        element.getBody().insertEnd(snippet);
     }
 
-    private String log(String event, String username, String action) {
-       String template = "Order.get%sLogger().log(Level.FINER, \"[%s - %s] L'utilisateur %s a réalisé l'opération %s\")";
+    private String log(String event, String action) {
+       String template = "Repository.get%sLogger().log(Level.FINER, \"[%s - %s] L'utilisateur \" + user + \" a réalisé l'opération %s";
        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
        LocalDateTime now = LocalDateTime.now();
+       template += action.equals("display") ? "\")" : " sur le produit \" + product)";
 
-       return String.format(template, event, dtf.format(now), event.toUpperCase(Locale.ROOT), username, action);
+       return String.format(template, event, dtf.format(now), event.toUpperCase(Locale.ROOT), action);
     }
 }

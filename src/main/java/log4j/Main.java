@@ -1,35 +1,20 @@
 package log4j;
 
-import ecommerce.Order;
-import ecommerce.Product;
+import ecommerce.Repository;
 import ecommerce.User;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.logging.*;
 
 public class Main {
-    private static final Logger LOGGER = Logger.getLogger(Order.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(Repository.class.getName());
 
-    public static void main (String[] args) throws Exception {
+    public static void main (String[] args) {
         //Question 1
-        Map<Integer, Product> products = new HashMap<>();
-        products.put(1,new Product(1, "p1", 20, new GregorianCalendar(2021, Calendar.NOVEMBER, 30)));
-        products.put(2,new Product(2, "p2", 25, new GregorianCalendar(2021, Calendar.NOVEMBER, 29)));
-        Order order = new Order(products);
-        User user = new User(1, "nicolas","nicolas@gmail.com", "a", 23, order);
 
-        user.display();
-        user.fetch(3);
-
-        Product add = new Product(1, "p3", 30, new GregorianCalendar(2021, Calendar.DECEMBER, 2));
-
-        user.add(add);
-        user.delete(3);
-        user.update(1, "d1", -1, null);
-        user.display();
+        // Création de la liste des produits
+        Repository.init();
+        // Réalisation des scénarios utilisateur
+        makeScenarios();
 
         //Question 2
         LOGGER.setLevel(Level.INFO);
@@ -57,5 +42,13 @@ public class Main {
         }catch (Exception e){
             LOGGER.log(Level.SEVERE, "Error occur in FileHandler.", e);
         }
+    }
+
+    private static void makeScenarios() {
+        // Création de l'utilisateur
+        User user = new User("Georges", "georges97@gmail.com", "azerty", 75);
+
+        // Scénario pour user
+        // TODO Faire la même que user5
     }
 }
