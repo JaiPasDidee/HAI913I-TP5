@@ -7,7 +7,6 @@ import java.io.FileWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -57,33 +56,33 @@ public class Main {
         Repository.display(user1);
         Repository.fetch(user1, 1);
         Repository.fetch(user1, 3);
-        Repository.add(user1, new Product("P4", 400, LocalDate.now()));
+        Repository.add(user1, new Product("P4", 400));
         Repository.display(user1);
         Repository.fetch(user1, 4);
-        Repository.add(user1, new Product("P5", 60, LocalDate.now()));
-        Repository.add(user1, new Product("P6", 3, LocalDate.now()));
-        Repository.add(user1, new Product("P7", 900, LocalDate.now()));
-        Repository.add(user1, new Product("P8", 777, LocalDate.now()));
+        Repository.add(user1, new Product("P5", 60));
+        Repository.add(user1, new Product("P6", 3));
+        Repository.add(user1, new Product("P7", 900));
+        Repository.add(user1, new Product("P8", 777));
         Repository.delete(user1, 6);
         Repository.display(user1);
 
         // Scénario pour user2 (écriture uniquement)
-        Repository.add(user2, new Product("P9", 2499, LocalDate.now()));
-        Repository.add(user2, new Product("P10", 1, LocalDate.now()));
-        Repository.update(user2, 10, null, 2, null);
-        Repository.add(user2, new Product("P11", 14, LocalDate.now()));
-        Repository.add(user2, new Product("P12", 570, LocalDate.now()));
+        Repository.add(user2, new Product("P9", 2499));
+        Repository.add(user2, new Product("P10", 1));
+        Repository.update(user2, 10, null, 2);
+        Repository.add(user2, new Product("P11", 14));
+        Repository.add(user2, new Product("P12", 570));
         Repository.delete(user2, 11);
-        Repository.add(user2, new Product("P13", 68, LocalDate.now()));
-        Repository.update(user2, 7, "P7u", -1, null);
-        Repository.update(user2, 13, "P13u", 69, null);
+        Repository.add(user2, new Product("P13", 68));
+        Repository.update(user2, 7, "P7u", -1);
+        Repository.update(user2, 13, "P13u", 69);
         Repository.delete(user2, 5);
 
         // Scénario pour user3 (lecture uniquement)
         Repository.display(user3);
         Repository.fetch(user3, 10);
         Repository.display(user3);
-        Repository.fetch(user3, 4);
+        Repository.fetch(user3, 7);
         Repository.display(user3);
         Repository.fetch(user3, 13);
         Repository.display(user3);
@@ -108,8 +107,16 @@ public class Main {
         Repository.fetch(user4, 8);
 
         // Scénario pour user5 (un peu de tout)
-        // TODO
-        Repository.fetch(user5, 9);
+        Repository.display(user5);
+        Repository.update(user5, 13, null, 690);
+        Repository.fetch(user5, 13);
+        Repository.add(user5, new Product("P14", 2));
+        Repository.delete(user5, 14);
+        Repository.display(user5);
+        Repository.add(user5, new Product("P15", 10));
+        Repository.update(user5, 15, "P15u", -1);
+        Repository.fetch(user5, 15);
+        Repository.delete(user5, 15);
     }
 
     private static void extractProfiles(String file) throws Exception {

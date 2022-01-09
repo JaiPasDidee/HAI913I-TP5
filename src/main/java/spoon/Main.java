@@ -13,7 +13,7 @@ public class Main {
         LogProcessor logProcessor = new LogProcessor();
 
         spoon.addInputResource("./src/main/java/ecommerce");
-        spoon.setSourceOutputDirectory("./spooned/src/main/java");
+        spoon.setSourceOutputDirectory("../TP5_Spooned/src/main/java");
         spoon.getEnvironment().setSourceClasspath(new String[] { "./target" });
         spoon.getEnvironment().setAutoImports(true);
         spoon.addProcessor(mainProcessor);
@@ -21,6 +21,6 @@ public class Main {
         spoon.addProcessor(logProcessor);
         spoon.run();
 
-        System.out.println("La génération de code pour la traçabilité a été effectuée.");
+        System.out.println("La génération de code pour la traçabilité a été effectuée dans le projet TP5_Spooned.");
     }
 }
